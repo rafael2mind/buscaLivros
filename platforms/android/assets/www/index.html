@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" >
+<title>Inicio</title>
+<!-- Início Importações -->
+<link rel="stylesheet" href="themes/meu-tema.min.css" />
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.5.min.css" />
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+
+
+<!-- Fim Importações -->
+
+</head>
+<body> 
+
+<!-- Inicio pagina Inicial -->
+<div data-role="page" id="inicial">
+  <div data-role="header">
+    <h1>SI 2015</h1>
+  </div>
+  <div data-role="content">
+    <center><img src="img/imagem.png"></center>
+    <center><h1>BuscaLivros</h1></center>
+    <div data-role="fieldcontain">
+      <label for="textinput">Digite uma palavra-chave:</label>
+      <input type="text" name="textinput" id="busca" value=""  />
+      </div>
+    <a href="" data-role="button" data-icon="search" data-iconpos="top" onClick="buscar()">Buscar</a>
+      
+        
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h4>Tópicos Avançados</h4>
+  </div>
+</div>
+<!-- Fim pagina inicial -->
+
+
+<!-- Inicio pagina Inicial -->
+<div data-role="page" id="resultados">
+  <div data-role="header">
+    <h1>SI 2015</h1>
+  </div>
+  <div data-role="content">
+
+    <ul data-role="listview" data-filter="true" data-split-icon="plus" data-filter-placeholder="Buscar título..." data-inset="true" id="livro">
+      
+    </ul>
+    
+      
+  </div>
+  <div data-role="footer" data-position="fixed" data-id="foot" class="nav-footer">
+    <div data-role="navbar" id="nav" class="nav-footer">
+      <div data-role="content">
+        <ul>
+          <li><a href="#" data-role="button" data-rel="back" data-icon="back" 
+                        onClick="sair()">Voltar</a></li>       
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fim pagina inicial -->
+
+<!-- Inicio pagina Inicial -->
+<div data-role="page" id="livro">
+  <div data-role="header">
+    <h1>SI 2015</h1>
+  </div>
+  <div data-role="content">
+    <center><img src="" id="capa"></center>
+    
+    <div data-role="fieldcontain">
+      <label for="textinput">Título do livro:</label>
+      <input type="text" name="textinput" id="titulo" value="" readonly />
+    </div>
+    
+    <div data-role="fieldcontain">
+      <label for="textinput3">Autor:</label>
+      <input type="text" name="textinput3" id="autor" value="" readonly />
+    </div>
+    
+    <div data-role="fieldcontain">
+      <label for="textinput2">Data de publicação:</label>
+      <input type="text" name="textinput2" id="ano" value="" readonly />
+    </div>
+    
+    <div data-role="fieldcontain">
+      <label for="textinput4">Editora:</label>
+      <input type="text" name="textinput4" id="editora" value="" readonly />
+    </div> 
+    
+    <div data-role="fieldcontain">
+      <label for="textarea">Resenha:</label>
+      <textarea cols="40" rows="8" name="resenha" id="resenha" readonly>
+      
+      </textarea>
+    </div>
+      
+  </div>
+  <div data-role="footer" data-position="fixed" data-id="foot" class="nav-footer">
+    <div data-role="navbar" id="nav" class="nav-footer">
+      <div data-role="content">
+        <ul>
+          <li><a href="#" data-role="button" data-rel="back" data-icon="back" 
+                        onClick="#resultados">Voltar</a></li>       
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fim pagina inicial -->
+
+
+<script type="text/javascript" src="js/buscar.js"></script>
+
+<script type="text/javascript">
+
+function exibeLivro(id){
+  localStorage.setItem("livro", id );
+  mostraLivro();
+}
+
+function sair(){
+  location.href='index.html';
+}
+
+
+</script>
+
+</body>
+</html>
